@@ -1,0 +1,41 @@
+#spring:
+#  data:
+#    redis:
+#      database:
+#      host:
+#      port:
+#      password:
+#      ssl:
+#      timeout:
+#      connectTimeout:
+#      clientName:
+#      cluster:
+#        nodes:
+#      sentinel:
+#        master:
+#        nodes:
+
+# xxl-job admin 配置
+xxl:
+  job:
+    admin:
+      addresses: http://localhost:8080/xxl-job-admin
+    accessToken: lgx123456
+    executor:
+      appname: dev-bluegrass-coree-service
+      # logpath: /root/xxljob/data/applogs/jobhandler
+      logretentiondays: 10
+
+
+mybatis-flex:
+  datasource:
+    master:
+      type: druid
+      url: jdbc:mysql://127.0.0.1:3306/yoyo?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai
+      username: root
+      password: toortoor
+      asyncInit: true
+
+forest:
+  interceptors:
+    cn.yoyo.components.syslog.RequestLogForestAspect

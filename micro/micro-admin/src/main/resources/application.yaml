@@ -1,0 +1,79 @@
+spring:
+#  data:
+#    redis:
+#      database:
+#      host:
+#      port:
+#      password:
+#      ssl:
+#      timeout:
+#      connectTimeout:
+#      clientName:
+#      cluster:
+#        nodes:
+#      sentinel:
+#        master:
+#        nodes:
+
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+
+# 多数据源配置
+mybatis-flex:
+  global-config:
+    db-type: mysql
+#  datasource:
+#    master:
+#      type: druid
+#      driver-class-name: com.mysql.cj.jdbc.Driver
+#      url: jdbc:mysql://127.0.0.1:3306/yoyo?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai
+#      username: root
+#      password: toortoor
+
+server:
+  port: 8080
+  tomcat:
+    # tomcat检测, 这个不开启可能会导致tomcat的指标获取不到
+    mbeanregistry:
+      enabled: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*' #开启所有端点
+      base-path: /monitor #修改端点前缀，默认/actuator
+  endpoint:
+    health:
+      enabled: true
+      show-details: always
+      show-components: always
+  prometheus:
+    metrics:
+      export:
+        descriptions: false
+
+
+# springdoc-openapi 项目配置
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    tags-sorter: alpha
+    operations-sorter: alpha
+  api-docs:
+    path: /v3/api-docs
+  group-configs:
+    - group: 'default'
+      paths-to-match: '/**'
+      packages-to-scan: cn.yoyo
+
+
+# knife4j的增强配置，不需要增强可以不配
+knife4j:
+  enable: true
+  setting:
+    language: zh_cn
+
+forest:
+  interceptors:
+    cn.yoyo.components.syslog.RequestLogForestAspect
