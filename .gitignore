@@ -31,5 +31,5 @@ build/
 ### VS Code ###
 .vscode/
 
-yoyo-env/mysql/data/
+env/mysql/data/
 logs/

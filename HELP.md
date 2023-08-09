@@ -29,27 +29,27 @@
 │       <root-package>.components.executor
 │       <root-package>.components.json
 │       <root-package>.components.syslog
-├── micro                // 微服务集合，最终物理运行服务。可以根据项目大小合并服务
-│   ├── micro-admin      // 后管服务
+├── micro                   // 微服务集合，最终物理运行服务。可以根据项目大小合并服务
+│   ├── micro-admin         // 后管服务
 │   │       <root-package>.micro.admin.MicroAdminApplication
 │   │       <root-package>.micro.admin.adapter.listener     // 用户监听组件发出的内存事件。比如：日志、异常等
 │   │       <root-package>.micro.admin.adapter.rest         // Http 接口 服务
-│   ├── micro-h5        //
+│   ├── micro-h5            //
 │   │       <root-package>.micro.h5.MicroH5Application
 │   │       <root-package>.micro.h5.adapter.listener     // 用户监听组件发出的内存事件。比如：日志、异常等
 │   │       <root-package>.micro.h5.adapter.rest         // Http 接口 服务
-│   ├── micro-job/mq    // 可以独立，可以分开
+│   ├── micro-job/mq        // 可以独立，可以分开
 │   │       <root-package>.micro.<?>.MicroJobApplication
 │   │       <root-package>.micro.<?>.adapter.listener     // 用户监听组件发出的内存事件。比如：日志、异常等
 │   │       <root-package>.micro.<?>.adapter.job          // Job 调用入口
 │   │       <root-package>.micro.<?>.adapter.mq           // MQ 监听端点
-│   ├── micro-inter     // 集成服务。包括：开放接口、数据集成等
+│   ├── micro-integrated    // 集成服务。包括：开放接口、数据集成等
 │   │       <root-package>.micro.inter.MicroInterApplication
 │   │       <root-package>.micro.inter.adapter.listener     // 用户监听组件发出的内存事件。比如：日志、异常等
 │   │       <root-package>.micro.inter.adapter.rest         // Http方式 集成
 │   │       <root-package>.micro.inter.adapter.mq           // 消息方式 集成
 │   │       <root-package>.micro.inter.adapter.schedules    // 定时任务 集成
-│   ├── micro-<?>     // 任何独立运行服务
+│   ├── micro-<?>           // 任何独立运行服务
 │   └── pom.xml
 ├── module-sdk          // 所有三方系统SDK封装，注意所有 三方系统SDK 都是属于 infra 层
 │       <root-package>.module.sdk.clients  // 用 forest 封装的外部接口调用API，如：wx、txmap、baidu 等
