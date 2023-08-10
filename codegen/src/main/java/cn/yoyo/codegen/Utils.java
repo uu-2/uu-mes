@@ -32,13 +32,16 @@ public class Utils {
     }
 
     public static String inputModuleName() {
-        String moduleName = Utils.inputString("请输入模块名【micro/module-xxx】", "module-demo");
-        if (!StringUtils.startsWithIgnoreCase(moduleName, "micro-")
-                && !StringUtils.startsWithIgnoreCase(moduleName, "module-")) {
-            System.out.println("模块名字必须以【micro-】或者【module-】开头");
-            System.exit(1);
+        String moduleName = Utils.inputString("请输入模块名【micro/facade/module-xxx】", "module-demo");
+        if (StringUtils.startsWithIgnoreCase(moduleName, "micro-")
+                || StringUtils.startsWithIgnoreCase(moduleName, "module-")
+                || StringUtils.startsWithIgnoreCase(moduleName, "facade-")
+        ) {
+            return moduleName;
         }
-        return moduleName;
+        System.out.println("模块名字必须以【micro-】/【module-】/【adapter-】开头");
+        System.exit(1);
+        return "";
     }
 
     public static String readProp(String name, String prompt, String defaultValue) {

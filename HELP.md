@@ -29,15 +29,17 @@
 │       <root-package>.components.executor
 │       <root-package>.components.json
 │       <root-package>.components.syslog
+├── facade                   // 服务暴露层
+│   ├── facade-admin         
+│   │       <root-package>.facade.admin.configuration           // 配置信息
+│   │       <root-package>.facade.admin.adapter.listener        // 用户监听组件发出的内存事件。比如：日志、异常等
+│   │       <root-package>.facade.admin.adapter.rest            // Http 接口 服务
 ├── micro                   // 微服务集合，最终物理运行服务。可以根据项目大小合并服务
 │   ├── micro-admin         // 后管服务
 │   │       <root-package>.micro.admin.MicroAdminApplication
-│   │       <root-package>.micro.admin.adapter.listener     // 用户监听组件发出的内存事件。比如：日志、异常等
-│   │       <root-package>.micro.admin.adapter.rest         // Http 接口 服务
+│   │       <root-package>.micro.admin.configuration    // 用户监听组件发出的内存事件。比如：日志、异常等
 │   ├── micro-h5            //
 │   │       <root-package>.micro.h5.MicroH5Application
-│   │       <root-package>.micro.h5.adapter.listener     // 用户监听组件发出的内存事件。比如：日志、异常等
-│   │       <root-package>.micro.h5.adapter.rest         // Http 接口 服务
 │   ├── micro-job/mq        // 可以独立，可以分开
 │   │       <root-package>.micro.<?>.MicroJobApplication
 │   │       <root-package>.micro.<?>.adapter.listener     // 用户监听组件发出的内存事件。比如：日志、异常等
@@ -51,26 +53,27 @@
 │   │       <root-package>.micro.inter.adapter.schedules    // 定时任务 集成
 │   ├── micro-<?>           // 任何独立运行服务
 │   └── pom.xml
-├── module-sdk          // 所有三方系统SDK封装，注意所有 三方系统SDK 都是属于 infra 层
-│       <root-package>.module.sdk.clients  // 用 forest 封装的外部接口调用API，如：wx、txmap、baidu 等
-│       <root-package>.module.sdk.utils    // 外部调用时工具处理类
-├── module-sys          // 系统核心模块
-│    方式一：子模块分散（目前选用）
-│       <root-package>.module.sys.domain                        // 业务领域服务。XxxBiz
-│       <root-package>.module.sys.domain.entity                 // 业务领域实体。Xxx
-│       <root-package>.module.sys.domain.points                 // 业务服务所需的外部依赖抽象。如：XxxRepository
-│       <root-package>.module.sys.infra                         // 外部依赖实现
-│       <root-package>.module.sys.infra.repository              // 存储接口实现。如：XxxRepositoryImpl
-│       <root-package>.module.sys.infra.repository.mybatis.dto  // 存储实现的具体方式。如：RDMS、mongo、es
-│       <root-package>.module.sys.infra.repository.mybatis.mapper
-│       <root-package>.module.sys.infra.repository.mongo
-│       <root-package>.module.sys.infra.repository.es
-│    方式二：子模块独立
-│       <root-package>.module.sys.dict.<.>
-│       <root-package>.module.sys.operlog.<.>
-├── module-user     // 用户、权限相关模块。包含：运维用户、客户用户等
-├── module-...      // 其他业务组件
-├── pom.xml
-└── env             // 环境相关配置
-    ├── docker-compose.yml
-    └── mysql
+├── module              // 业务领域层
+│   ├── module-sdk          // 所有三方系统SDK封装，注意所有 三方系统SDK 都是属于 infra 层
+│   │       <root-package>.module.sdk.clients  // 用 forest 封装的外部接口调用API，如：wx、txmap、baidu 等
+│   │       <root-package>.module.sdk.utils    // 外部调用时工具处理类
+│   ├── module-sys          // 系统核心模块
+│   │    方式一：子模块分散（目前选用）
+│   │       <root-package>.module.sys.domain                        // 业务领域服务。XxxBiz
+│   │       <root-package>.module.sys.domain.entity                 // 业务领域实体。Xxx
+│   │       <root-package>.module.sys.domain.points                 // 业务服务所需的外部依赖抽象。如：XxxRepository
+│   │       <root-package>.module.sys.infra                         // 外部依赖实现
+│   │       <root-package>.module.sys.infra.repository              // 存储接口实现。如：XxxRepositoryImpl
+│   │       <root-package>.module.sys.infra.repository.mybatis.dto  // 存储实现的具体方式。如：RDMS、mongo、es
+│   │       <root-package>.module.sys.infra.repository.mybatis.mapper
+│   │       <root-package>.module.sys.infra.repository.mongo
+│   │       <root-package>.module.sys.infra.repository.es
+│   │    方式二：子模块独立
+│   │       <root-package>.module.sys.dict.<.>
+│   │       <root-package>.module.sys.operlog.<.>
+│   ├── module-user     // 用户、权限相关模块。包含：运维用户、客户用户等
+│   ├── module-...      // 其他业务组件
+│   ├── pom.xml
+│   └── env             // 环境相关配置
+│       ├── docker-compose.yml
+│       └── mysql

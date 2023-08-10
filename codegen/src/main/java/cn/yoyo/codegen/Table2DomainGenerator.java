@@ -21,8 +21,7 @@ public class Table2DomainGenerator {
 
         String moduleName = Utils.inputModuleName();
         String moduleType = StrUtil.splitToArray(moduleName, "-")[0];
-        String parentDir = "module".equals(moduleType) ? "" : "micro/";
-        String moduleDir = Utils.getModuleDir(wsDir, moduleName, parentDir);
+        String moduleDir = Utils.getModuleDir(wsDir, moduleName, moduleType);
         sourceDir = moduleDir + "/src/main/java";
 
         String rootPkg = Utils.readProp("root", "请输入包名", "cn.yoyo");

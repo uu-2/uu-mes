@@ -17,8 +17,7 @@ public class ModuleGenerator {
 
         String moduleName = Utils.inputModuleName();
         String moduleType = StrUtil.splitToArray(moduleName, "-")[0];
-        String parentDir = "module".equals(moduleType) ? "" : "micro";
-        String moduleDir = Utils.getModuleDir(wsDir, moduleName, parentDir);
+        String moduleDir = Utils.getModuleDir(wsDir, moduleName, moduleType);
 
         if (FileUtil.exist(moduleDir)) {
             System.out.println("模块已存在");
@@ -91,14 +90,12 @@ public class ModuleGenerator {
     }
 
     private static moduleProjectInfo getModuleProjectInfo(String wsDir, String moduleName, String moduleType) {
-        String parent = "module".equals(moduleType) ? "yoyo" : "micro";
-        String parentPath = "module".equals(moduleType) ? "" : "micro";
-        String moduleProjectDir = Utils.getModuleDir(wsDir, moduleName, parentPath);
+        String moduleProjectDir = Utils.getModuleDir(wsDir, moduleName, moduleType);
         String moduleRootPackage = (ROOT_PKG + "." + moduleName).replaceAll("-", ".");
         String moduleRootPackageDir = "/src/main/java/" + moduleRootPackage.replaceAll("\\.", "/");
         return new moduleProjectInfo(
                 wsDir, moduleName, moduleType,
-                parent, moduleProjectDir, moduleRootPackage, moduleRootPackageDir);
+                moduleType, moduleProjectDir, moduleRootPackage, moduleRootPackageDir);
     }
 
     private record moduleProjectInfo(

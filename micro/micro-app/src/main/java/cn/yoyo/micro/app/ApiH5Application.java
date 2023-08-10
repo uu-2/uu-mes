@@ -1,4 +1,4 @@
-package cn.yoyo.micro.h5;
+package cn.yoyo.micro.app;
 
 import com.dtflys.forest.springboot.annotation.ForestScan;
 import org.mybatis.spring.annotation.MapperScan;

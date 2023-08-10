@@ -1,4 +1,4 @@
-package cn.yoyo.micro.admin.adapter.listener;
+package cn.yoyo.facade.admin.adapter.listener;
 
 import cn.yoyo.module.sys.domain.OperLogBiz;
 import cn.yoyo.components.syslog.OperLogEvent;

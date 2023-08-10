@@ -37,10 +37,8 @@
         <module>components</module>
         <module>codegen</module>
         <module>micro</module>
-        <module>module-sdk</module>
-        <module>module-sys</module>
-        <module>module-user</module>
-        <module>module-demo</module>
+        <module>facade</module>
+        <module>module</module>
     </modules>
 
     <dependencyManagement>
@@ -63,6 +61,11 @@
             <dependency>
                 <groupId>cn.yoyo</groupId>
                 <artifactId>module-user</artifactId>
+                <version>${yoyo.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.yoyo</groupId>
+                <artifactId>facade-admin</artifactId>
                 <version>${yoyo.version}</version>
             </dependency>
 

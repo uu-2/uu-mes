@@ -8,17 +8,14 @@
         <version>0.0.1</version>
     </parent>
 
-    <artifactId>micro</artifactId>
+    <artifactId>facade</artifactId>
     <version>0.0.1</version>
-    <name>micro</name>
-    <description>yoyo-micro</description>
+    <name>facade</name>
+    <description>facade</description>
     <packaging>pom</packaging>
 
     <modules>
-        <module>micro-admin</module>
-        <module>micro-app</module>
-        <module>micro-job</module>
-        <module>micro-integrated</module>
+        <module>facade-admin</module>
     </modules>
 
 </project>
