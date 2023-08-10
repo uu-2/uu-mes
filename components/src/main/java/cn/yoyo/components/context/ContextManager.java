@@ -48,4 +48,8 @@ public class ContextManager {
         _ctx.get().clear();
         _ctx.remove();
     }
+
+    public static Object getTraceId() {
+        return get(ContextInterceptor.TRACE_ID_KEY);
+    }
 }

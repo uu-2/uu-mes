@@ -23,7 +23,7 @@
         <mybatis-flex.version>1.5.3</mybatis-flex.version>
         <druid.version>1.2.18</druid.version>
         <fastjson.version>2.0.37</fastjson.version>
-        <redisson.version>3.19.3</redisson.version>
+        <redisson.version>3.23.2</redisson.version>
         <logback.encoder.logstash.version>7.4</logback.encoder.logstash.version>
         <camel.version>3.21.0</camel.version>
         <xxl-job.version>2.4.0</xxl-job.version>
@@ -145,6 +145,11 @@
             <dependency>
                 <groupId>cn.dev33</groupId>
                 <artifactId>sa-token-spring-boot3-starter</artifactId>
+                <version>${sa-token.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.dev33</groupId>
+                <artifactId>sa-token-dao-redis-jackson</artifactId>
                 <version>${sa-token.version}</version>
             </dependency>
 
