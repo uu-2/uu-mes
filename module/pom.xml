@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>cn.yoyo</groupId>
-        <artifactId>yoyo</artifactId>
+        <artifactId>yoyo-mes</artifactId>
         <version>0.0.1</version>
     </parent>
 
@@ -19,6 +19,7 @@
         <module>module-sys</module>
         <module>module-user</module>
         <module>module-demo</module>
+        <module>module-aps</module>
     </modules>
 
 </project>

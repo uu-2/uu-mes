@@ -3,18 +3,17 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>cn.yoyo</groupId>
-        <artifactId>yoyo-mes</artifactId>
+        <artifactId>module</artifactId>
         <version>0.0.1</version>
     </parent>
-    <artifactId>module-demo</artifactId>
-    <name>module-demo</name>
+    <artifactId>module-aps</artifactId>
+    <name>module-aps</name>
     <packaging>jar</packaging>
 
     <dependencies>
         <dependency>
             <groupId>cn.yoyo</groupId>
             <artifactId>components</artifactId>
-            <version>0.0.1</version>
         </dependency>
 
         <dependency>

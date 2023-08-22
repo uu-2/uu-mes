@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>cn.yoyo</groupId>
-    <artifactId>yoyo</artifactId>
+    <artifactId>yoyo-mes</artifactId>
     <version>0.0.1</version>
-    <name>yoyo</name>
-    <description>yoyo</description>
+    <name>yoyo-mes</name>
+    <description>yoyo mes</description>
     <packaging>pom</packaging>
     <properties>
         <yoyo.version>0.0.1</yoyo.version>
