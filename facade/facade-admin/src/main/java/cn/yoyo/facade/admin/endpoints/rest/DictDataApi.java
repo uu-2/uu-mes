@@ -1,4 +1,4 @@
-package cn.yoyo.facade.admin.adapter.rest;
+package cn.yoyo.facade.admin.endpoints.rest;
 
 import cn.yoyo.components.biz.CrudBaseApi;
 import cn.yoyo.module.sys.domain.entity.Dict;

@@ -1,4 +1,4 @@
-package cn.yoyo.facade.admin.adapter.rest;
+package cn.yoyo.facade.admin.endpoints.rest;
 
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
