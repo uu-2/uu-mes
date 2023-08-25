@@ -12,7 +12,7 @@ import cn.yoyo.module.aps.domain.points.DeviceRepository;
  * @since 2023-08-25
  */
 @Component
-public class DeviceBiz extends CrudBaseBiz<Device> {
+public class DeviceBiz extends CrudBaseBiz<Device,Long> {
 
     public DeviceBiz(DeviceRepository repo) {
         super(repo);

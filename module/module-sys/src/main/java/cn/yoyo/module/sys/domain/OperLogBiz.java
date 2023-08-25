@@ -6,7 +6,7 @@ import cn.yoyo.module.sys.domain.points.OperLogRepository;
 import org.springframework.stereotype.Component;
 
 @Component
-public class OperLogBiz extends CrudBaseBiz<OperLog> {
+public class OperLogBiz extends CrudBaseBiz<OperLog, Long> {
 
     public OperLogBiz(OperLogRepository repo) {
         super(repo);

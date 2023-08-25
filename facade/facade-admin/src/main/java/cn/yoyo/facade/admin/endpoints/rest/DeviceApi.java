@@ -16,7 +16,7 @@ import cn.yoyo.module.aps.domain.DeviceBiz;
 @RestController
 @RequestMapping("/api/aps/device")
 @Tag(name = "设备信息表")
-public class DeviceApi extends CrudBaseApi<Device, DeviceBiz> {
+public class DeviceApi extends CrudBaseApi<Device, Long, DeviceBiz> {
 
     public DeviceApi(DeviceBiz crudBiz) {
         super(crudBiz);

@@ -6,7 +6,7 @@ import cn.yoyo.module.sys.domain.points.DictRepository;
 import org.springframework.stereotype.Component;
 
 @Component
-public class DictDataBiz extends CrudBaseBiz<Dict> {
+public class DictDataBiz extends CrudBaseBiz<Dict, Long> {
 
 
     public DictDataBiz(DictRepository repo) {

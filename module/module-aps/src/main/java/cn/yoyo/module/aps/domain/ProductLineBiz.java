@@ -6,7 +6,7 @@ import cn.yoyo.module.aps.domain.points.ProductLineRepository;
 import org.springframework.stereotype.Component;
 
 @Component
-public class ProductLineBiz extends CrudBaseBiz<ProductLine> {
+public class ProductLineBiz extends CrudBaseBiz<ProductLine, Long> {
     protected ProductLineBiz(ProductLineRepository repo) {
         super(repo);
     }

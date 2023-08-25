@@ -16,7 +16,7 @@ import cn.yoyo.module.sys.domain.SysConfigBiz;
 @RestController
 @RequestMapping("/sys/config")
 @Tag(name = "参数配置表")
-public class SysConfigApi extends CrudBaseApi<SysConfig, SysConfigBiz> {
+public class SysConfigApi extends CrudBaseApi<SysConfig, Long, SysConfigBiz> {
 
     public SysConfigApi(SysConfigBiz crudBiz) {
         super(crudBiz);

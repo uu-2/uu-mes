@@ -6,13 +6,13 @@ import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
 
-public abstract class CrudBaseBiz<E> {
+public abstract class CrudBaseBiz<E,K extends Serializable> {
 
     private final CrudBaseRepo<E> repo;
     protected CrudBaseBiz(CrudBaseRepo<E> repo) {
         this.repo = repo;
     }
-    public boolean remove(List<? extends Serializable> ids) {
+    public boolean remove(List<K> ids) {
         return this.repo.remove(ids);
     }
 
@@ -20,7 +20,7 @@ public abstract class CrudBaseBiz<E> {
         return this.repo.findPage(pageNumber, pageSize, condition, operators);
     }
 
-    public E detail(Long id) {
+    public E detail(K id) {
         return this.repo.findById(id);
     }
 

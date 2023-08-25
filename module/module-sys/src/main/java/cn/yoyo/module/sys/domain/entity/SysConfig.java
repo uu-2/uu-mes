@@ -20,7 +20,7 @@ public class SysConfig{
     /**
      * 参数主键
      */
-    private Integer configId;
+    private Long configId;
     /**
      * 参数名称
      */

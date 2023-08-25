@@ -11,7 +11,7 @@ import #(importClass);
  * @since #(javadocConfig.getSince())
  */
 @Component
-public class #(table.getEntityJavaFileName())Biz extends CrudBaseBiz<#(table.getEntityJavaFileName())> {
+public class #(table.getEntityJavaFileName())Biz extends CrudBaseBiz<#(table.getEntityJavaFileName()), Long> {
 
     public #(table.getEntityJavaFileName())Biz(#(table.getEntityJavaFileName())Repository repo) {
         super(repo);

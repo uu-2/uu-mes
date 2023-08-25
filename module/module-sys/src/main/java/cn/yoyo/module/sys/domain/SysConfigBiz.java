@@ -12,7 +12,7 @@ import cn.yoyo.module.sys.domain.points.SysConfigRepository;
  * @since 2023-08-07
  */
 @Component
-public class SysConfigBiz extends CrudBaseBiz<SysConfig> {
+public class SysConfigBiz extends CrudBaseBiz<SysConfig, Long> {
 
     public SysConfigBiz(SysConfigRepository repo) {
         super(repo);

@@ -1,11 +1,14 @@
 package cn.yoyo.codegen;
 
+import cn.hutool.core.io.file.PathUtil;
 import cn.hutool.core.util.StrUtil;
 import cn.yoyo.codegen.generator.*;
 import com.mybatisflex.codegen.Generator;
 import com.mybatisflex.codegen.config.GlobalConfig;
 import com.mybatisflex.codegen.generator.GeneratorFactory;
 import com.zaxxer.hikari.HikariDataSource;
+
+import java.nio.file.Path;
 
 public class Table2DomainGenerator {
 
@@ -94,10 +97,13 @@ public class Table2DomainGenerator {
         if ("Y".equalsIgnoreCase(hasCurdApi)) {
 
             String rootPkg = Utils.readProp("root", "请输入包名", "cn.yoyo");
-            String apiModulePath = Utils.inputString("请输入API模块名", "micro-admin");
+            String apiModulePath = Utils.inputString("请输入API模块名", "facade-admin");
             String apiUrl = Utils.inputString("请输入API接口地址", "/api");
-            if ("micro".equalsIgnoreCase(apiModulePath.split("-")[0])) {
-                apiModulePath = "micro/" + apiModulePath;
+            apiModulePath = apiModulePath.split("-")[0] + "/" + apiModulePath;
+            Path p = Path.of(apiModulePath);
+            if (!PathUtil.exists(p, true) || !PathUtil.isDirectory(p)) {
+                System.out.println("API模块不存在");
+                System.exit(1);
             }
 
             GeneratorFactory.registerGenerator("controller", new DDDApiGenerator(rootPkg, apiModulePath, apiUrl));

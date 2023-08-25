@@ -16,7 +16,7 @@ import cn.yoyo.module.aps.domain.ProductLinePartDeviceBiz;
 @RestController
 @RequestMapping("/api/aps/product-line-part-device")
 @Tag(name = "产线部件设备信息表")
-public class ProductLinePartDeviceApi extends CrudBaseApi<ProductLinePartDevice, ProductLinePartDeviceBiz> {
+public class ProductLinePartDeviceApi extends CrudBaseApi<ProductLinePartDevice, Long, ProductLinePartDeviceBiz> {
 
     public ProductLinePartDeviceApi(ProductLinePartDeviceBiz crudBiz) {
         super(crudBiz);

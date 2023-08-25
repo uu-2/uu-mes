@@ -12,7 +12,7 @@ import cn.yoyo.module.aps.domain.points.ProductLinePartDeviceRepository;
  * @since 2023-08-25
  */
 @Component
-public class ProductLinePartDeviceBiz extends CrudBaseBiz<ProductLinePartDevice> {
+public class ProductLinePartDeviceBiz extends CrudBaseBiz<ProductLinePartDevice, Long> {
 
     public ProductLinePartDeviceBiz(ProductLinePartDeviceRepository repo) {
         super(repo);

@@ -6,14 +6,17 @@ import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.Serializable;
 import java.util.List;
 
 @RestController
-public abstract class CrudBaseApi<E, T extends CrudBaseBiz<E>> {
-    private final T crudBiz;
+public abstract class CrudBaseApi<E, K extends Serializable, Biz extends CrudBaseBiz<E, K>> {
+    private final Biz crudBiz;
 
-    /** unchecked **/
-    public CrudBaseApi(T crudBiz) {
+    /**
+     * unchecked
+     **/
+    public CrudBaseApi(Biz crudBiz) {
         this.crudBiz = crudBiz;
     }
 
@@ -26,14 +29,15 @@ public abstract class CrudBaseApi<E, T extends CrudBaseBiz<E>> {
     }
 
     @Operation(summary = "详情")
-    @GetMapping(value = "/{id}")
+    @GetMapping(value = "/detail/{id}")
+    @PostMapping(value = "/detail/{id}")
     @ResponseBody
-    public ResultVO<E> get(@PathVariable Long id) {
+    public ResultVO<E> get(@PathVariable K id) {
         return new ResultVO<>(crudBiz.detail(id));
     }
 
     @Operation(summary = "添加")
-    @PostMapping
+    @PostMapping(value = "/add")
     @ResponseBody
     public ResultVO<E> add(@Validated @RequestBody E entity) {
         return new ResultVO<>(crudBiz.add(entity));
@@ -41,7 +45,8 @@ public abstract class CrudBaseApi<E, T extends CrudBaseBiz<E>> {
 
 
     @Operation(summary = "修改")
-    @PutMapping
+    @PutMapping(value = "/edit")
+    @PostMapping(value = "/edit")
     @ResponseBody
     public ResultVO<E> edit(@Validated @RequestBody E entity) {
         return new ResultVO<>(crudBiz.edit(entity));
@@ -49,9 +54,10 @@ public abstract class CrudBaseApi<E, T extends CrudBaseBiz<E>> {
 
 
     @Operation(summary = "删除")
-    @DeleteMapping("/{ids}")
+    @DeleteMapping(value = "/del/{ids}")
+    @PostMapping(value = "/del/{ids}")
     @ResponseBody
-    public ResultVO<Boolean> remove(@PathVariable Long[] ids) {
+    public ResultVO<Boolean> delete(@PathVariable K[] ids) {
         return new ResultVO<>(crudBiz.remove(List.of(ids)));
     }
 }

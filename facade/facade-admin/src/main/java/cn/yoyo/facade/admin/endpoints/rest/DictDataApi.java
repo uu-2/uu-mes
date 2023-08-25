@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/sys/dict/data")
 @Tag(name = "数据字典")
-public class DictDataApi extends CrudBaseApi<Dict, DictDataBiz> {
+public class DictDataApi extends CrudBaseApi<Dict,Long,  DictDataBiz> {
 
     public DictDataApi(DictDataBiz tService) {
         super(tService);
