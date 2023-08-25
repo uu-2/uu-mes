@@ -8,6 +8,7 @@ import org.springframework.boot.actuate.autoconfigure.security.servlet.Managemen
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 import org.springframework.scheduling.annotation.EnableAsync;
 
 @SpringBootApplication(exclude = {SecurityAutoConfiguration.class, ManagementWebSecurityAutoConfiguration.class})
@@ -16,6 +17,7 @@ import org.springframework.scheduling.annotation.EnableAsync;
 @ForestScan(basePackages = "cn.yoyo.**.sdk.clients")
 @EnableAsync
 @EnableDynamicTp
+@EnableMongoRepositories(basePackages = "cn.yoyo.**.infra.repository.mongo")
 public class ApiAdminApplication {
 
     public static void main(String[] args) {

@@ -8,12 +8,14 @@
         <version>3.1.1</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
+
     <groupId>cn.yoyo</groupId>
     <artifactId>yoyo-mes</artifactId>
     <version>0.0.1</version>
     <name>yoyo-mes</name>
     <description>yoyo mes</description>
     <packaging>pom</packaging>
+
     <properties>
         <yoyo.version>0.0.1</yoyo.version>
         <java.version>17</java.version>
@@ -66,6 +68,11 @@
             <dependency>
                 <groupId>cn.yoyo</groupId>
                 <artifactId>facade-admin</artifactId>
+                <version>${yoyo.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.yoyo</groupId>
+                <artifactId>module-aps</artifactId>
                 <version>${yoyo.version}</version>
             </dependency>
 

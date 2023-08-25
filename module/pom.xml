@@ -9,7 +9,6 @@
     </parent>
 
     <artifactId>module</artifactId>
-    <version>0.0.1</version>
     <name>module</name>
     <description>module</description>
     <packaging>pom</packaging>
@@ -18,7 +17,6 @@
         <module>module-sdk</module>
         <module>module-sys</module>
         <module>module-user</module>
-        <module>module-demo</module>
         <module>module-aps</module>
     </modules>
 

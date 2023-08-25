@@ -61,7 +61,7 @@ public class Utils {
         InputStream input = null;
         try {
 
-            input = new FileInputStream("cfg.properties");
+            input = new FileInputStream("codegen/src/main/resources/cfg.properties");
 
             // 加载属性文件
             prop.load(input);

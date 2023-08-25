@@ -102,8 +102,8 @@ values (6, '用户登录-黑名单列表', 'sys.login.blackIPList', '', 'Y', 'ad
 -- ----------------------------
 -- 4、产线信息表
 -- ----------------------------
-drop table if exists t_production_line;
-create table t_production_line
+drop table if exists t_product_line;
+create table t_product_line
 (
     id          bigint(20) not null auto_increment comment '产线ID',
     line_name   varchar(50) not null comment '产线名称',
@@ -119,8 +119,8 @@ create table t_production_line
     primary key (id)
 ) engine=innodb comment = '产线信息表';
 
-drop table if exists t_production_line_part;
-create table t_production_line_part
+drop table if exists t_product_line_part;
+create table t_product_line_part
 (
     id          bigint(20) not null auto_increment comment '产线部件ID',
     line_id     bigint(20) not null comment '产线ID',
@@ -135,3 +135,38 @@ create table t_production_line_part
     remark      varchar(500) default null comment '备注',
     primary key (id)
 ) engine=innodb comment = '产线部件信息表';
+
+
+drop table if exists t_device;
+create table t_device
+(
+    id          bigint(20) not null auto_increment comment '设备ID',
+    device_name varchar(50) not null comment '设备名称',
+    device_code varchar(50) not null comment '设备编码',
+    device_type varchar(50) not null comment '设备类型',
+    device_desc varchar(50) not null comment '设备描述',
+    create_by   varchar(64)  default '' comment '创建者',
+    create_time datetime comment '创建时间',
+    update_by   varchar(64)  default '' comment '更新者',
+    update_time datetime comment '更新时间',
+    remark      varchar(500) default null comment '备注',
+    primary key (id)
+) engine=innodb comment = '设备信息表';
+
+drop table if exists t_product_line_part_device;
+create table t_product_line_part_device
+(
+    id          bigint(20) not null auto_increment comment '产线部件设备ID',
+    line_id     bigint(20) not null comment '产线ID',
+    part_id     bigint(20) not null comment '部件ID',
+    device_id   bigint(20) not null comment '设备ID',
+    status      varchar(50) not null comment '状态',
+    create_by   varchar(64)  default '' comment '创建者',
+    create_time datetime comment '创建时间',
+    update_by   varchar(64)  default '' comment '更新者',
+    update_time datetime comment '更新时间',
+    delete_by   varchar(64)  default '' comment '删除者',
+    delete_time datetime comment '删除时间',
+    remark      varchar(500) default null comment '备注',
+    primary key (id)
+) engine=innodb comment = '产线部件设备信息表';

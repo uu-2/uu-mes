@@ -16,6 +16,7 @@ import java.util.Map;
 public class DeviceEvent {
     private String id;
     private Long deviceId;
+    private Long deviceStatus;
     private String eventType;
     private Long eventTime;
     private Long receiveTime;

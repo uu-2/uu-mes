@@ -45,9 +45,8 @@ public class Table2DomainGenerator {
         dataSource.setUsername(username);
         dataSource.setPassword(password);
 
-        //创建配置内容，两种风格都可以。
-//        GlobalConfig globalConfig = createGlobalConfigUseStyle1();
-        GlobalConfig globalConfig = createGlobalConfigUseStyle2();
+        //创建配置内容
+        GlobalConfig globalConfig = createGlobalConfigUseStyle2(table.split(","));
 
         //通过 datasource 和 globalConfig 创建代码生成器
         Generator generator = new Generator(dataSource, globalConfig);
@@ -56,7 +55,7 @@ public class Table2DomainGenerator {
         generator.generate();
     }
 
-    public static GlobalConfig createGlobalConfigUseStyle2() {
+    public static GlobalConfig createGlobalConfigUseStyle2(String[] tables) {
         //创建配置内容
         GlobalConfig globalConfig = new GlobalConfig();
 
@@ -75,7 +74,7 @@ public class Table2DomainGenerator {
         globalConfig.getStrategyConfig()
                 .setGenerateSchema(schema)
                 .setTablePrefix("t_")
-                .setGenerateTable(table);
+                .setGenerateTable(tables);
 
         //设置生成 entity.tpl 并启用 Lombok
         globalConfig.enableEntity()

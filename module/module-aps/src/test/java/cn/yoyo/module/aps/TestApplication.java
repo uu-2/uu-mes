@@ -12,7 +12,7 @@ import org.springframework.scheduling.annotation.EnableAsync;
 @ComponentScan(basePackages = "cn.yoyo")
 @MapperScan(basePackages = "cn.yoyo.**.infra.repository.mybatis.mapper")
 @ForestScan(basePackages = "cn.yoyo.**.sdk.clients")
-@EnableAsync
+//@EnableAsync
 //@EnableDynamicTp
 public class TestApplication {
 }
