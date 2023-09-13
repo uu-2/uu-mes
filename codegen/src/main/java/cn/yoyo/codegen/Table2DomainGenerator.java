@@ -68,6 +68,7 @@ public class Table2DomainGenerator {
                 .setSourceDir(sourceDir)
                 .setBasePackage(basePackage)
                 .setEntityPackage(basePackage + ".infra.repository.mybatis.dto")
+                .setTableDefPackage(basePackage + ".infra.repository.mybatis.dto")
                 .setMapperPackage(basePackage + ".infra.repository.mybatis.mapper")
                 .setServiceImplPackage(basePackage + ".infra.repository")
                 .setServicePackage(basePackage + ".domain.repository")
@@ -83,6 +84,8 @@ public class Table2DomainGenerator {
         globalConfig.enableEntity()
                 .setClassPrefix("T")
                 .setWithLombok(true);
+        globalConfig.enableTableDef()
+                .setClassPrefix("T");
 
         //设置生成 mapper
         globalConfig.enableMapper()

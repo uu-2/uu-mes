@@ -26,8 +26,8 @@ import java.util.List;
 import java.util.Map;
 
 public abstract class CrudBaseRepoMongoImpl<T, K, E> implements CrudBaseRepo<E> {
-    private final MongoRepository<T, K> mapper;
-    private final ConvertTemplate<E, T> converter;
+    protected final MongoRepository<T, K> mapper;
+    protected final ConvertTemplate<E, T> converter;
     private final Class<T> clazzT;
 
     protected CrudBaseRepoMongoImpl(MongoRepository<T, K> mapper, ConvertTemplate<E, T> converter) {
