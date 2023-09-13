@@ -10,15 +10,16 @@
     </parent>
 
     <groupId>cn.yoyo</groupId>
-    <artifactId>yoyo-mes</artifactId>
+    <artifactId>uu-mes</artifactId>
     <version>0.0.1</version>
     <name>yoyo-mes</name>
     <description>yoyo mes</description>
     <packaging>pom</packaging>
 
     <properties>
-        <yoyo.version>0.0.1</yoyo.version>
         <java.version>17</java.version>
+
+        <yoyo.version>0.0.1</yoyo.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <org.mapstruct.version>1.5.5.Final</org.mapstruct.version>
         <hutool.version>5.8.20</hutool.version>

@@ -29,8 +29,7 @@ public abstract class CrudBaseApi<E, K extends Serializable, Biz extends CrudBas
     }
 
     @Operation(summary = "详情")
-    @GetMapping(value = "/detail/{id}")
-    @PostMapping(value = "/detail/{id}")
+    @RequestMapping(value = "/detail/{id}", method = {RequestMethod.GET, RequestMethod.POST})
     @ResponseBody
     public ResultVO<E> get(@PathVariable K id) {
         return new ResultVO<>(crudBiz.detail(id));
@@ -45,8 +44,7 @@ public abstract class CrudBaseApi<E, K extends Serializable, Biz extends CrudBas
 
 
     @Operation(summary = "修改")
-    @PutMapping(value = "/edit")
-    @PostMapping(value = "/edit")
+    @RequestMapping(value = "/edit", method = {RequestMethod.PUT, RequestMethod.POST})
     @ResponseBody
     public ResultVO<E> edit(@Validated @RequestBody E entity) {
         return new ResultVO<>(crudBiz.edit(entity));
@@ -54,8 +52,7 @@ public abstract class CrudBaseApi<E, K extends Serializable, Biz extends CrudBas
 
 
     @Operation(summary = "删除")
-    @DeleteMapping(value = "/del/{ids}")
-    @PostMapping(value = "/del/{ids}")
+    @RequestMapping(value = "/del/{id}", method = {RequestMethod.DELETE, RequestMethod.POST})
     @ResponseBody
     public ResultVO<Boolean> delete(@PathVariable K[] ids) {
         return new ResultVO<>(crudBiz.remove(List.of(ids)));

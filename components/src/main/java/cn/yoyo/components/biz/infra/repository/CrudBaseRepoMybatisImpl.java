@@ -18,8 +18,8 @@ import java.util.List;
 import java.util.Map;
 
 public abstract class CrudBaseRepoMybatisImpl<T, E> implements CrudBaseRepo<E> {
-    private final BaseMapper<T> mapper;
-    private final ConvertTemplate<E, T> converter;
+    protected final BaseMapper<T> mapper;
+    protected final ConvertTemplate<E, T> converter;
 
     protected CrudBaseRepoMybatisImpl(BaseMapper<T> mapper, ConvertTemplate<E, T> converter) {
         this.mapper = mapper;
@@ -29,7 +29,8 @@ public abstract class CrudBaseRepoMybatisImpl<T, E> implements CrudBaseRepo<E> {
     @Override
     @Log( bizType = BizType.INSERT)
     public E save(E entity) {
-        return this.mapper.insert(converter.e2t(entity)) > 0 ? entity : null;
+        T t = converter.e2t(entity);
+        return this.mapper.insert(t) > 0 ? converter.t2e(t) : null;
     }
 
     @Override
