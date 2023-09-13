@@ -33,13 +33,13 @@ public class ModuleGenerator {
 
     private static void generateModulePom(moduleProjectInfo modInfo) {
 
-        String pomTemplate = FileUtil.readUtf8String("templates/pom.xml");
+        String pomTemplate = FileUtil.readUtf8String(Utils.systemPath("templates/pom.xml"));
         String modulePom = pomTemplate
                 .replaceAll("\\$\\{parent\\}", modInfo.parent())
                 .replaceAll("\\$\\{module\\}", modInfo.moduleName())
                 .replaceAll("\\$\\{rootPackage\\}", modInfo.moduleRootPackage())
                 .replaceAll("\\$\\{rootPageDir\\}", modInfo.moduleRootPackage());
-        FileUtil.writeUtf8String(modulePom, modInfo.moduleProjectDir() + "/pom.xml");
+        FileUtil.writeUtf8String(modulePom, Utils.systemPath(modInfo.moduleProjectDir() + "/pom.xml"));
     }
 
     static void generateModuleStruct(moduleProjectInfo modInfo) {
@@ -70,7 +70,7 @@ public class ModuleGenerator {
             FileUtil.touch(targetPath);
             String content = FileUtil.readUtf8String(file)
                     .replaceAll("\\$\\{moduleRootPackage\\}", modInfo.moduleRootPackage());
-            FileUtil.writeUtf8String(content, targetPath);
+            FileUtil.writeUtf8String(content, Utils.systemPath(targetPath));
         });
     }
 
@@ -85,7 +85,7 @@ public class ModuleGenerator {
         };
 
         for (String dir : dirs) {
-            FileUtil.mkdir(dir);
+            FileUtil.mkdir(Utils.systemPath(dir));
         }
     }
 

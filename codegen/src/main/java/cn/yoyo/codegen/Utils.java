@@ -90,6 +90,11 @@ public class Utils {
         return cfg;
     }
 
+    public static String systemPath(String p) {
+        String sep = System.getProperties().getProperty("file.separator");
+        return p.replaceAll("/", sep);
+    }
+
     public record Cfg(
             String root,
             String host,
@@ -98,6 +103,5 @@ public class Utils {
             String password,
             String curdApiModule
     ) {
-
     }
 }

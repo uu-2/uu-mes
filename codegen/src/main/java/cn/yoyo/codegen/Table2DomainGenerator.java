@@ -103,7 +103,7 @@ public class Table2DomainGenerator {
             String apiModulePath = Utils.inputString("请输入API模块名", "facade-admin");
             String apiUrl = Utils.inputString("请输入API接口地址", "/api");
             apiModulePath = apiModulePath.split("-")[0] + "/" + apiModulePath;
-            Path p = Path.of(apiModulePath);
+            Path p = Path.of(Utils.systemPath(apiModulePath));
             if (!PathUtil.exists(p, true) || !PathUtil.isDirectory(p)) {
                 System.out.println("API模块不存在");
                 System.exit(1);
@@ -111,14 +111,6 @@ public class Table2DomainGenerator {
 
             GeneratorFactory.registerGenerator("controller", new DDDApiGenerator(rootPkg, apiModulePath, apiUrl));
         }
-
-        //可以单独配置某个列
-//        ColumnConfig columnConfig = new ColumnConfig();
-//        columnConfig.setColumnName("tenant_id");
-//        columnConfig.setLarge(true);
-//        columnConfig.setVersion(true);
-//        globalConfig.getStrategyConfig()
-//                .setColumnConfig("account", columnConfig);
 
         return globalConfig;
     }
