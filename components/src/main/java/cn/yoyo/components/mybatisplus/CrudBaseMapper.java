@@ -11,6 +11,13 @@ import org.apache.ibatis.annotations.Param;
 import java.util.List;
 
 
+/**
+ * 自定义 BaseMapper.
+ * @param <T>
+ *
+ * @author YuRuizhi
+ * @date 2023/10/17
+ */
 public interface CrudBaseMapper<T> extends BaseMapper<T> {
 
     /* ↓↓↓↓↓↓↓↓↓↓↓↓↓↓  ↓↓↓↓↓↓↓↓↓↓↓↓↓↓ */

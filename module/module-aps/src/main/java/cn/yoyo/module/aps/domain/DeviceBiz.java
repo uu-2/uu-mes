@@ -9,7 +9,7 @@ import cn.yoyo.module.aps.domain.points.DeviceRepository;
  * Device 业务服务。
  *
  * @author three3q
- * @since 2023-08-25
+ * @date 2023-08-25
  */
 @Component
 public class DeviceBiz extends CrudBaseBiz<Device,Long> {

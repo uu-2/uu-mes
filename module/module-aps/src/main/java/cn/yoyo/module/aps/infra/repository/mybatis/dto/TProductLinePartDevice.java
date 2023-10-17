@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
  * 产线部件设备信息表 实体类。
  *
  * @author three3q
- * @since 2023-08-25
+ * @date 2023-08-25
  */
 @Data
 @Builder

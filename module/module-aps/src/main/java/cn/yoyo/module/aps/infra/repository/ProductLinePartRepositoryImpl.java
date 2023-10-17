@@ -12,7 +12,7 @@ import cn.yoyo.module.aps.infra.repository.mybatis.mapper.TProductLinePartMapper
  * ProductLinePart 存储层实现。
  *
  * @author three3q
- * @since 2023-08-25
+ * @date 2023-08-25
  */
 @Component
 public class ProductLinePartRepositoryImpl extends CrudBaseRepoMybatisImpl<TProductLinePart,ProductLinePart>

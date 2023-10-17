@@ -8,7 +8,7 @@ import #(importClass);
  * #(table.getEntityJavaFileName()) 存储层实现。
  *
  * @author #(javadocConfig.getAuthor())
- * @since #(javadocConfig.getSince())
+ * @date #(javadocConfig.getSince())
  */
 @Component
 public class #(table.getEntityJavaFileName())RepositoryImpl extends CrudBaseRepoMybatisImpl<#(table.buildEntityClassName()),#(table.getEntityJavaFileName())>

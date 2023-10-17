@@ -9,7 +9,7 @@ import cn.yoyo.module.aps.domain.points.ProductLinePartDeviceRepository;
  * ProductLinePartDevice 业务服务。
  *
  * @author three3q
- * @since 2023-08-25
+ * @date 2023-08-25
  */
 @Component
 public class ProductLinePartDeviceBiz extends CrudBaseBiz<ProductLinePartDevice, Long> {

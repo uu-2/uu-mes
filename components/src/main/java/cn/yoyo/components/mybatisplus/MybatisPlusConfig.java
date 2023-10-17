@@ -4,8 +4,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * @author K
- * @since 2019/7/9
+ * MybatisPlus 配置类.
+ *
+ * @author YuRuizhi
+ * @date 2023/10/17
  */
 @Configuration
 public class MybatisPlusConfig {

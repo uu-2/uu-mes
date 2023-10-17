@@ -7,7 +7,7 @@ import cn.yoyo.module.aps.domain.entity.ProductLinePartDevice;
  * ProductLinePartDevice 存储。
  *
  * @author three3q
- * @since 2023-08-25
+ * @date 2023-08-25
  */
 public interface ProductLinePartDeviceRepository extends CrudBaseRepo<ProductLinePartDevice> {
 

@@ -8,7 +8,7 @@ import cn.yoyo.module.aps.domain.entity.ProductLinePart;
  * ProductLinePart <=> TProductLinePart 转化工具。
  *
  * @author three3q
- * @since 2023-08-25
+ * @date 2023-08-25
  */
 @Mapper(componentModel = "spring")
 public interface TProductLinePartConvert extends ConvertTemplate<ProductLinePart, TProductLinePart> {

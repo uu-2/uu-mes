@@ -24,7 +24,7 @@ import lombok.NoArgsConstructor;
  * #(table.getComment()) 实体类。
  *
  * @author #(javadocConfig.getAuthor())
- * @since #(javadocConfig.getSince())
+ * @date #(javadocConfig.getSince())
  */
 #if(withLombok)
 @Data

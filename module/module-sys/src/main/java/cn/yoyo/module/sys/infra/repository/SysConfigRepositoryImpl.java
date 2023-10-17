@@ -12,7 +12,7 @@ import cn.yoyo.module.sys.infra.repository.mybatis.mapper.TSysConfigMapper;
  * SysConfig 存储层实现。
  *
  * @author three3q
- * @since 2023-08-07
+ * @date 2023-08-07
  */
 @Component
 public class SysConfigRepositoryImpl extends CrudBaseRepoMybatisImpl<TSysConfig,SysConfig>

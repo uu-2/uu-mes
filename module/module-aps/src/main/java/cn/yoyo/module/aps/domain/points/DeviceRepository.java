@@ -7,7 +7,7 @@ import cn.yoyo.module.aps.domain.entity.Device;
  * Device 存储。
  *
  * @author three3q
- * @since 2023-08-25
+ * @date 2023-08-25
  */
 public interface DeviceRepository extends CrudBaseRepo<Device> {
 

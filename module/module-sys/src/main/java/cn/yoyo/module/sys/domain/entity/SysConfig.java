@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
  * 参数配置表 实体类。
  *
  * @author three3q
- * @since 2023-08-07
+ * @date 2023-08-07
  */
 @Data
 @Builder

@@ -10,10 +10,12 @@ import com.baomidou.mybatisplus.extension.injector.methods.LogicDeleteByIdWithFi
 
 import java.util.List;
 
-/**
- * 自定义Sql注入
+
+ /**
+ * 自定义Sql注入器.
  *
  * @author YuRuizhi
+ * @date 2023/10/17
  */
 public class SqlInjector extends DefaultSqlInjector {
 

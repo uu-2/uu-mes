@@ -8,7 +8,7 @@ import #(importClass);
  * #(table.getEntityJavaFileName()) 存储。
  *
  * @author #(javadocConfig.getAuthor())
- * @since #(javadocConfig.getSince())
+ * @date #(javadocConfig.getSince())
  */
 public interface #(table.getEntityJavaFileName())Repository extends CrudBaseRepo<#(table.getEntityJavaFileName())> {
 

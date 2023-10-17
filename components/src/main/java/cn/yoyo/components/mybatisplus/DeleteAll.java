@@ -6,6 +6,12 @@ import org.apache.ibatis.mapping.MappedStatement;
 import org.apache.ibatis.mapping.SqlSource;
 
 
+/**
+ * 自定义删除所有方法.
+ *
+ * @author YuRuizhi
+ * @date 2023/10/17
+ */
 public class DeleteAll extends AbstractMethod {
 
     public DeleteAll(String methodName) {

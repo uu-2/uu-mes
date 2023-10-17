@@ -8,7 +8,7 @@ import #(importClass);
  * #(table.getEntityJavaFileName()) 业务服务。
  *
  * @author #(javadocConfig.getAuthor())
- * @since #(javadocConfig.getSince())
+ * @date #(javadocConfig.getSince())
  */
 @RestController
 @RequestMapping("#(apiUrl)")
