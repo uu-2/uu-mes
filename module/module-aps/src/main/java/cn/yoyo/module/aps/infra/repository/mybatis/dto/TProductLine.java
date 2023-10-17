@@ -1,8 +1,8 @@
 package cn.yoyo.module.aps.infra.repository.mybatis.dto;
 
-import com.mybatisflex.annotation.Id;
-import com.mybatisflex.annotation.KeyType;
-import com.mybatisflex.annotation.Table;
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import lombok.AllArgsConstructor;
@@ -20,12 +20,12 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(value = "t_product_line", schema = "yoyo")
+@TableName(value = "t_product_line", schema = "yoyo")
 public class TProductLine implements Serializable {
     /**
      * 产线ID
      */
-    @Id(keyType = KeyType.Auto)
+    @TableId(type = IdType.AUTO)
     private Long id;
     /**
      * 产线名称

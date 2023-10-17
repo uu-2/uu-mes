@@ -1,3 +1,10 @@
+server:
+  port: 8081
+  tomcat:
+    # tomcat检测, 这个不开启可能会导致tomcat的指标获取不到
+    mbeanregistry:
+      enabled: true
+
 #spring:
 #  data:
 #    redis:

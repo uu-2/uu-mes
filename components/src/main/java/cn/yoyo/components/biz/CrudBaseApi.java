@@ -7,6 +7,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.Serializable;
+import java.util.HashMap;
 import java.util.List;
 
 @RestController
@@ -25,7 +26,11 @@ public abstract class CrudBaseApi<E, K extends Serializable, Biz extends CrudBas
     @PostMapping(value = "/list")
     @ResponseBody
     public ResultVO<Page<E>> list() {
-        return new ResultVO<>(crudBiz.list(1, 2, null));
+        HashMap<String, Object> condition = new HashMap<>();
+        condition.put("age", 18);
+        HashMap<String, String> operators = new HashMap<>();
+        operators.put("age", "GT");
+        return new ResultVO<>(crudBiz.list(1, 2, condition, operators));
     }
 
     @Operation(summary = "详情")

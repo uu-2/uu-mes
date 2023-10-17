@@ -8,15 +8,10 @@ import cn.yoyo.components.biz.infra.exception.RepoException;
 import cn.yoyo.components.biz.tansfer.Page;
 import cn.yoyo.components.syslog.annotation.Log;
 import cn.yoyo.components.syslog.enums.BizType;
-import com.mybatisflex.core.BaseMapper;
-import com.mybatisflex.core.constant.SqlOperator;
-import com.mybatisflex.core.query.QueryWrapper;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.mongodb.core.query.Criteria;
-import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.transaction.annotation.Transactional;
 

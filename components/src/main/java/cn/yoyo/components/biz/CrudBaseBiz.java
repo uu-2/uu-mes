@@ -7,8 +7,8 @@ import java.util.List;
 import java.util.Map;
 
 public abstract class CrudBaseBiz<E,K extends Serializable> {
-
     private final CrudBaseRepo<E> repo;
+
     protected CrudBaseBiz(CrudBaseRepo<E> repo) {
         this.repo = repo;
     }

@@ -1,14 +1,15 @@
 package cn.yoyo.module.aps.infra.repository.mybatis.dto;
 
-import com.mybatisflex.annotation.Id;
-import com.mybatisflex.annotation.KeyType;
-import com.mybatisflex.annotation.Table;
-import java.io.Serializable;
-import java.time.LocalDateTime;
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.io.Serializable;
+import java.time.LocalDateTime;
 
 /**
  * 产线部件设备信息表 实体类。
@@ -20,12 +21,12 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(value = "t_product_line_part_device", schema = "yoyo")
+@TableName(value = "t_product_line_part_device", schema = "yoyo")
 public class TProductLinePartDevice implements Serializable {
     /**
      * 产线部件设备ID
      */
-    @Id(keyType = KeyType.Auto)
+    @TableId(type = IdType.AUTO)
     private Long id;
     /**
      * 产线ID

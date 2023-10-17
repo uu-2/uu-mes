@@ -1,27 +1,24 @@
 package cn.yoyo.components.biz.infra.repository;
 
 import cn.hutool.core.collection.ListUtil;
+import cn.yoyo.components.biz.CrudBaseRepo;
 import cn.yoyo.components.biz.convert.ConvertTemplate;
 import cn.yoyo.components.biz.infra.exception.RepoException;
 import cn.yoyo.components.biz.tansfer.Page;
-import com.mybatisflex.core.BaseMapper;
-import cn.yoyo.components.biz.CrudBaseRepo;
+import cn.yoyo.components.mybatisplus.CrudBaseMapper;
 import cn.yoyo.components.syslog.annotation.Log;
 import cn.yoyo.components.syslog.enums.BizType;
-import com.mybatisflex.core.constant.SqlOperator;
-import com.mybatisflex.core.query.QueryWrapper;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.io.Serializable;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public abstract class CrudBaseRepoMybatisImpl<T, E> implements CrudBaseRepo<E> {
-    protected final BaseMapper<T> mapper;
+    protected final CrudBaseMapper<T> mapper;
     protected final ConvertTemplate<E, T> converter;
 
-    protected CrudBaseRepoMybatisImpl(BaseMapper<T> mapper, ConvertTemplate<E, T> converter) {
+    protected CrudBaseRepoMybatisImpl(CrudBaseMapper<T> mapper, ConvertTemplate<E, T> converter) {
         this.mapper = mapper;
         this.converter = converter;
     }
@@ -43,7 +40,7 @@ public abstract class CrudBaseRepoMybatisImpl<T, E> implements CrudBaseRepo<E> {
         }
 
         for(List<E> es :ListUtil.partition(entities, bs)) {
-            int result = this.mapper.insertBatch(converter.e2t(es));
+            int result = this.mapper.insertBatchSomeColumn(converter.e2t(es));
             if (result != es.size()) {
                 throw new RepoException("批量插入失败");
             }
@@ -56,24 +53,24 @@ public abstract class CrudBaseRepoMybatisImpl<T, E> implements CrudBaseRepo<E> {
     @Override
     @Log(bizType = BizType.UPDATE)
     public E update(E entity) {
-        return this.mapper.update(converter.e2t(entity)) > 0 ? entity : null;
+        return this.mapper.updateById(converter.e2t(entity)) > 0 ? entity : null;
     }
 
     @Override
     @Log(bizType = BizType.DELETE)
     public boolean remove(List<? extends Serializable> ids) {
-        return this.mapper.deleteBatchByIds(ids) >= 0;
+        return this.mapper.deleteBatchIds(ids) >= 0;
     }
 
     @Override
     public E findById(Serializable id) {
-        T d = this.mapper.selectOneById(id);
+        T d = this.mapper.selectById(id);
         return d == null ? null : converter.t2e(d);
     }
 
     @Override
     public Page<E> findByIds(List<? extends Serializable> ids) {
-        List<T> list = this.mapper.selectListByIds(ids);
+        List<T> list = this.mapper.selectBatchIds(ids);
         List<E> data = converter.t2e(list);
         return Page.<E>builder()
                 .pageNum(1)
@@ -85,7 +82,8 @@ public abstract class CrudBaseRepoMybatisImpl<T, E> implements CrudBaseRepo<E> {
 
     @Override
     public Page<E> findPage(int pageNumber, int pageSize, Map<String, Object> condition, Map<String, String>... operators) {
-        QueryWrapper wrapper = new QueryWrapper();
+        // TODO: 2023-10-17 [Henry.Yu] mybatis-plus分页兼容
+        /*QueryWrapper wrapper = new QueryWrapper();
         if (null!=condition){
             if (operators.length > 0) {
                 HashMap<String, SqlOperator> sqlOpt = new HashMap<>();
@@ -106,6 +104,7 @@ public abstract class CrudBaseRepoMybatisImpl<T, E> implements CrudBaseRepo<E> {
                 .pageNum(page.getPageNumber())
                 .totalPage(page.getTotalPage())
                 .totalRow(page.getTotalRow())
-                .list(converter.t2e(page.getRecords())).build();
+                .list(converter.t2e(page.getRecords())).build(); */
+        return null;
     }
 }

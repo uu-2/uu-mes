@@ -1,6 +1,6 @@
 package cn.yoyo.module.sys.infra.repository.mybatis.mapper;
 
-import com.mybatisflex.core.BaseMapper;
+import cn.yoyo.components.mybatisplus.CrudBaseMapper;
 import cn.yoyo.module.sys.infra.repository.mybatis.dto.TSysConfig;
 
 /**
@@ -9,6 +9,6 @@ import cn.yoyo.module.sys.infra.repository.mybatis.dto.TSysConfig;
  * @author three3q
  * @since 2023-08-07
  */
-public interface TSysConfigMapper extends BaseMapper<TSysConfig> {
+public interface TSysConfigMapper extends CrudBaseMapper<TSysConfig> {
 
 }

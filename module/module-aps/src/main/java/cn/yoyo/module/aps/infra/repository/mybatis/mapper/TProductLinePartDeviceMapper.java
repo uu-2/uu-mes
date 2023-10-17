@@ -1,6 +1,6 @@
 package cn.yoyo.module.aps.infra.repository.mybatis.mapper;
 
-import com.mybatisflex.core.BaseMapper;
+import cn.yoyo.components.mybatisplus.CrudBaseMapper;
 import cn.yoyo.module.aps.infra.repository.mybatis.dto.TProductLinePartDevice;
 
 /**
@@ -9,6 +9,6 @@ import cn.yoyo.module.aps.infra.repository.mybatis.dto.TProductLinePartDevice;
  * @author three3q
  * @since 2023-08-25
  */
-public interface TProductLinePartDeviceMapper extends BaseMapper<TProductLinePartDevice> {
+public interface TProductLinePartDeviceMapper extends CrudBaseMapper<TProductLinePartDevice> {
 
 }

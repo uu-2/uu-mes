@@ -1,20 +1,20 @@
 package cn.yoyo.module.sys.infra.repository.mybatis.dto;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.mybatisflex.annotation.Id;
-import com.mybatisflex.annotation.KeyType;
-import com.mybatisflex.annotation.Table;
 import lombok.Data;
 
 import java.util.Date;
 
 @Data
-@Table("t_oper_log")
+@TableName("t_oper_log")
 public class TOperLog {
     /**
      * 日志主键
      */
-    @Id(keyType = KeyType.Auto)
+    @TableId(type = IdType.AUTO)
     private Long Id;
 
     /**

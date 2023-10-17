@@ -1,3 +1,9 @@
+server:
+  port: 8082
+  tomcat:
+    # tomcat检测, 这个不开启可能会导致tomcat的指标获取不到
+    mbeanregistry:
+      enabled: true
 
 spring:
   data:
@@ -56,13 +62,6 @@ mybatis-flex:
 #      url: jdbc:mysql://127.0.0.1:3306/yoyo?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai
 #      username: root
 #      password: toortoor
-
-server:
-  port: 8080
-  tomcat:
-    # tomcat检测, 这个不开启可能会导致tomcat的指标获取不到
-    mbeanregistry:
-      enabled: true
 
 management:
   endpoints:

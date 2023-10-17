@@ -1,14 +1,14 @@
 package cn.yoyo.module.sys.infra.repository.mybatis.dto;
 
-import com.mybatisflex.annotation.Id;
-import com.mybatisflex.annotation.KeyType;
-import com.mybatisflex.annotation.Table;
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
 @Data
-@Table("t_dict")
+@TableName("t_dict")
 public class TDict {
-    @Id(keyType = KeyType.Auto)
+    @TableId(type = IdType.AUTO)
     private Long id;
     private String userName;
     private Integer age;

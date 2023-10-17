@@ -1,12 +1,6 @@
 package cn.yoyo.components.biz.infra.repository;
 
 import cn.hutool.core.util.StrUtil;
-import com.mybatisflex.annotation.UseDataSource;
-import com.mybatisflex.core.datasource.DataSourceKey;
-import com.mybatisflex.core.row.RowMapper;
-import com.mybatisflex.core.table.TableInfo;
-import com.mybatisflex.core.table.TableInfoFactory;
-import com.mybatisflex.core.util.StringUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -14,17 +8,18 @@ import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.stereotype.Component;
 
-@Aspect
-@Component
+// @Aspect
+// @Component
 @Slf4j
 public class DynamicDataSourceAspect {
-    @Pointcut("execution(* *..mybatis.mapper..*(..))")
+    // TODO: 2023-10-17 [Henry.Yu] mybatis-plus 数据源动态切换
+    /*@Pointcut("execution(* *..mybatis.mapper..*(..))")
     public void dbOperatorMethods() {
     }
 
-    /**
+    *//**
      * 处理请求前执行
-     */
+     *//*
     @Around("dbOperatorMethods()")
     public Object dbAround(ProceedingJoinPoint joinPoint) throws Throwable {
         boolean needClearDsKey = false;
@@ -54,7 +49,7 @@ public class DynamicDataSourceAspect {
 
     }
 
-    private static String getConfigDataSourceKey(/*Method method, */Object proxy) {
+    private static String getConfigDataSourceKey(*//*Method method, *//*Object proxy) {
 //        UseDataSource useDataSource = method.getAnnotation(UseDataSource.class);
 //        if (useDataSource != null && StringUtil.isNotBlank(useDataSource.value())) {
 //            return useDataSource.value();
@@ -78,6 +73,6 @@ public class DynamicDataSourceAspect {
             }
         }
         return null;
-    }
+    }*/
 
 }

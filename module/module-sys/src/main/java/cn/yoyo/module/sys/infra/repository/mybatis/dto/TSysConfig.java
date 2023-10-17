@@ -1,8 +1,8 @@
 package cn.yoyo.module.sys.infra.repository.mybatis.dto;
 
-import com.mybatisflex.annotation.Id;
-import com.mybatisflex.annotation.KeyType;
-import com.mybatisflex.annotation.Table;
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import lombok.AllArgsConstructor;
@@ -20,12 +20,12 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(value = "t_sys_config", schema = "yoyo")
+@TableName(value = "t_sys_config", schema = "yoyo")
 public class TSysConfig implements Serializable {
     /**
      * 参数主键
      */
-    @Id(keyType = KeyType.Auto)
+    @TableId(type = IdType.AUTO)
     private Integer configId;
     /**
      * 参数名称

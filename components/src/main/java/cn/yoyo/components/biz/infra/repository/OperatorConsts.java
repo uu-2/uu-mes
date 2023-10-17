@@ -1,7 +1,5 @@
 package cn.yoyo.components.biz.infra.repository;
 
-import com.mybatisflex.core.constant.SqlConsts;
-
 public interface OperatorConsts {
 
     // >
